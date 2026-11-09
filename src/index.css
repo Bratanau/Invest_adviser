@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+html {
+  font-size: 15px;
+  background: #fff;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100dvh;
+  margin: 0;
+  overflow: hidden;
+}

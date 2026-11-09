@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "start": "tsx server.ts",
+    "tunnel": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run-ngrok.ps1",
     "lint": "tsc --noEmit"
   },
   "dependencies": {

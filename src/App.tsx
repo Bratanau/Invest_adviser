@@ -39,8 +39,7 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [trainerScore, setTrainerScore] = useState(0);
-  const [isPhoneFrame, setIsPhoneFrame] = useState(true);
-  const [theme, setTheme] = useState<'dark' | 'light' | 'cyber'>('light');
+  const theme = 'light';
 
   const isLight = theme === 'light';
 
@@ -101,10 +100,7 @@ export default function App() {
 
   return (
     <TelegramFrame
-      isPhoneFrame={isPhoneFrame}
-      onTogglePhoneFrame={() => setIsPhoneFrame(!isPhoneFrame)}
       theme={theme}
-      onThemeChange={setTheme}
       footer={
         <Navigation
           activeTab={activeTab}

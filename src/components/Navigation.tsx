@@ -51,21 +51,23 @@ export const Navigation: React.FC<NavigationProps> = ({
 
   return (
     <nav
-      className={`border-t sticky bottom-0 z-40 w-full px-2 py-1.5 transition-all ${
+      className={`w-full border-t px-2 pt-1.5 transition-all ${
         isLight
-          ? 'bg-white/95 backdrop-blur-md border-slate-200 shadow-md'
-          : 'bg-[#111827]/90 backdrop-blur-md border-slate-800/80'
+          ? 'border-slate-200 bg-white/95 pb-[calc(0.375rem+env(safe-area-inset-bottom))] shadow-[0_-4px_16px_rgba(15,23,42,0.06)] backdrop-blur-md'
+          : 'border-slate-800/80 bg-[#111827]/95 pb-[calc(0.375rem+env(safe-area-inset-bottom))] backdrop-blur-md'
       }`}
     >
-      <div className="max-w-md mx-auto grid grid-cols-4 gap-1">
+      <div className="mx-auto grid max-w-md grid-cols-4 gap-1">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
           return (
             <button
               key={tab.id}
+              type="button"
+              aria-current={isActive ? 'page' : undefined}
               onClick={() => onTabChange(tab.id)}
-              className={`flex flex-col items-center justify-center py-1.5 px-1 rounded-xl transition-all relative ${
+              className={`relative flex flex-col items-center justify-center rounded-xl px-1 py-1.5 transition-all ${
                 isActive
                   ? isLight
                     ? 'text-blue-600 font-bold'
@@ -91,7 +93,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                   </span>
                 )}
               </div>
-              <span className="text-[11px] mt-1 tracking-tight truncate w-full text-center">
+              <span className="mt-1 w-full truncate text-center text-[11px] tracking-tight">
                 {tab.label}
               </span>
               {isActive && (
