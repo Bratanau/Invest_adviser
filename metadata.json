@@ -1,0 +1,8 @@
+{
+  "name": "Голос Разума — Инвест-Аналитик TMA",
+  "description": "Telegram Mini App для фильтрации рыночного шума, фундаментального анализа новостей акций и тренировки критического мышления инвесторов.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
